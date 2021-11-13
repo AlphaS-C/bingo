@@ -35,6 +35,7 @@ public class VentanaBingo extends JFrame implements ActionListener
 	private JMenuItem jMenuItemCreaTableros;
 	private JMenuItem jMenuItemMuestraTablero;
 	private JMenuItem jMenuItemVende;
+	private JMenuItem jMenuItemRegala;
 	private JMenuItem jMenuItemAyuda;
 
 	private JLabel titulo;
@@ -56,18 +57,21 @@ public VentanaBingo()
 	jMenuItemCreaTableros=new JMenuItem ();
 	jMenuItemMuestraTablero=new JMenuItem ();
 	jMenuItemVende=new JMenuItem ();
+	jMenuItemRegala = new JMenuItem ();
 	jMenuItemAyuda=new JMenuItem ();
 	subMenuTablero.setText("Tablero");
 	subMenuAyuda.setText("Ayuda");
 	jMenuItemCreaTableros.setText("Crear todos los tableros");
 	jMenuItemMuestraTablero.setText("Muestra Tablero");
 	jMenuItemVende.setText("Vender un tablero");
+	jMenuItemRegala.setText("Regala un tablero");
 	jMenuItemAyuda.setText("fdsfdsf");
 	barraMenuPrincipal.add(subMenuTablero);
 	barraMenuPrincipal.add(subMenuAyuda);
 	subMenuTablero.add(jMenuItemCreaTableros);
 	subMenuTablero.add(jMenuItemMuestraTablero);
 	subMenuTablero.add(jMenuItemVende);
+	subMenuTablero.add(jMenuItemRegala);
 	subMenuAyuda.add(jMenuItemAyuda);
 	setJMenuBar(barraMenuPrincipal);
 	titulo.setBounds(80,30,350,30);
@@ -78,6 +82,7 @@ public VentanaBingo()
     jMenuItemCreaTableros.addActionListener(this);
     jMenuItemMuestraTablero.addActionListener(this);
     jMenuItemAyuda.addActionListener(this);
+    jMenuItemRegala.addActionListener(this);
 	setTitle("Bingo Uniquindiano");
 	setSize(500,500);
 	}
@@ -102,11 +107,18 @@ public void actionPerformed(ActionEvent e)
 	     VentanaTablero miVentanaTablero= new VentanaTablero(this, numTablero-1);
 	     miVentanaTablero.setVisible(true);
 	}
-	if(e.getSource() == jMenuItemVende)
+	if(e.getSource() == jMenuItemVende) // Accion de vender tableros
 	{
 		String cedula = Biblioteca.leerString("Digite su numero de cedula");
 		miBingo.addCedulas(cedula);
+		miBingo.sumarVendidos();
 		Dialogo miD= new DialogoDeAdvertencia("Compra exitosa");
+		miD.mostrarMensaje();
+	}
+	if(e.getSource() == jMenuItemRegala) // Accion de regalar tableros
+	{
+		int tablerosRegalados = Biblioteca.leerEntero("Ingrese el numero de tableros a regalar");
+		Dialogo miD= new DialogoDeAdvertencia("Se han regalado " + tablerosRegalados + " tableros");
 		miD.mostrarMensaje();
 	}
 

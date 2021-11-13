@@ -10,13 +10,13 @@
 *Un cliente podrá comprar todos los tableros que quiera*.
 
 
-- Informar la cantidad de dinero recaudado por los tableros vendidos.
+- Informar la cantidad de dinero recaudado por los tableros vendidos. *(cedulas.length)*
 
 - Informar cuándo se ha ganado el bingo
 
 - Entregar premio a los 3 primeros ganadores del bingo
 
-- Mostrar un tablero específico
+- ~~Mostrar un tablero específico~~
 
 - Mostrar los 3 tableros más cercanos a ganar bingo
 

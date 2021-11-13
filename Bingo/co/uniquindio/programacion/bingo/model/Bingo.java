@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class Bingo {
 	private ArrayList<int[][]> tableros;
 	private static final int TAM = 5;
+	private int tablerosVendidos = 0;
 
 	/**
 	 * M�todo constructor de la clase Bingo
@@ -100,13 +101,19 @@ public class Bingo {
 		return numero;
 	}
 	
-	public ArrayList<String> addCedulas (String cedula)
+	public ArrayList<String> addCedulas (String cedula) // añade cedulas a un array
 	{
 		ArrayList<String> cedulas = new ArrayList<String>();
-		System.out.print(cedula);
 		cedulas.add(cedula);
 		return cedulas;
 	}
+	
+	public int sumarVendidos()
+	{
+		tablerosVendidos += 1;
+		return tablerosVendidos;
+	}
+	
 	
 	public String toStringTablero(int tableroBingo[][]) {
 		String res = "";
