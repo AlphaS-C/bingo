@@ -32,5 +32,5 @@
 
 ### Prueba de escritorio
 
-![excel screenshot] (img1.png)
-![eclipse screenshot] (img2.png)
+![excel screenshot](img1.png)
+![eclipse screenshot](img2.png)
