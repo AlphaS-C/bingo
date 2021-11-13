@@ -100,6 +100,14 @@ public class Bingo {
 		return numero;
 	}
 	
+	public ArrayList<String> addCedulas (String cedula)
+	{
+		ArrayList<String> cedulas = new ArrayList<String>();
+		System.out.print(cedula);
+		cedulas.add(cedula);
+		return cedulas;
+	}
+	
 	public String toStringTablero(int tableroBingo[][]) {
 		String res = "";
 		for (int i = 0; i < TAM; i++) {

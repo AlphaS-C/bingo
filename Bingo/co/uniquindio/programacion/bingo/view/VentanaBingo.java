@@ -104,7 +104,8 @@ public void actionPerformed(ActionEvent e)
 	}
 	if(e.getSource() == jMenuItemVende)
 	{
-		int numCedula = Biblioteca.leerEntero("Digite su numero de cedula");
+		String cedula = Biblioteca.leerString("Digite su numero de cedula");
+		miBingo.addCedulas(cedula);
 		Dialogo miD= new DialogoDeAdvertencia("Compra exitosa");
 		miD.mostrarMensaje();
 	}
