@@ -101,23 +101,34 @@ public void actionPerformed(ActionEvent e)
 		Dialogo miD= new DialogoDeAdvertencia("Se han creado los tableros");
 		miD.mostrarMensaje();
 	}
+	
+	
 	if(e.getSource()==jMenuItemMuestraTablero)
 	{
 	     int numTablero= Biblioteca.leerEntero("Digite el numero de tablero");
 	     VentanaTablero miVentanaTablero= new VentanaTablero(this, numTablero-1);
 	     miVentanaTablero.setVisible(true);
 	}
+	
+	
 	if(e.getSource() == jMenuItemVende) // Accion de vender tableros
 	{
+		boolean comprado = true;
 		String cedula = Biblioteca.leerString("Digite su numero de cedula");
 		miBingo.addCedulas(cedula);
-		miBingo.sumarVendidos();
+		miBingo.calcularTableroActual(1); //suma 1 debido a que solo se puede comprar de 1 en uno
+		miBingo.addTablerosComprados(comprado, miBingo.calcularTableroActual(0),1);
 		Dialogo miD= new DialogoDeAdvertencia("Compra exitosa");
 		miD.mostrarMensaje();
 	}
+	
+	
 	if(e.getSource() == jMenuItemRegala) // Accion de regalar tableros
 	{
+		boolean comprado = false;
 		int tablerosRegalados = Biblioteca.leerEntero("Ingrese el numero de tableros a regalar");
+		miBingo.calcularTableroActual(tablerosRegalados); //añade el total de tableros regalados
+		miBingo.addTablerosComprados(comprado, miBingo.calcularTableroActual(0),tablerosRegalados);
 		Dialogo miD= new DialogoDeAdvertencia("Se han regalado " + tablerosRegalados + " tableros");
 		miD.mostrarMensaje();
 	}

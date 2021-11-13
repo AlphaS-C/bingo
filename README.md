@@ -6,11 +6,11 @@
 
 
 ### Todo List
-> -  ~~Permitir a un usuario, que indique su número de cédula,~~ comprar un tablero. 
+> -  ~~Permitir a un usuario, que indique su número de cédula, comprar un tablero.~~ 
 *Un cliente podrá comprar todos los tableros que quiera*.
 
 
-- Informar la cantidad de dinero recaudado por los tableros vendidos. *(cedulas.length)*
+- Informar la cantidad de dinero recaudado por los tableros vendidos.
 
 - Informar cuándo se ha ganado el bingo
 
@@ -20,7 +20,7 @@
 
 - Mostrar los 3 tableros más cercanos a ganar bingo
 
-- Regalar una cantidad n de tableros a los asistentes para que jueguen bingo
+- ~~Regalar una cantidad n de tableros a los asistentes para que jueguen bingo~~
 
 - Mostrar las bolas que ya han sido seleccionada
 
@@ -28,3 +28,9 @@
 
 - Listar todos  los números de tablero, luego de finalizar el juego, de menor a mayor bolas faltantes para haber ganado.
 
+----------
+
+### Prueba de escritorio
+
+![excel screenshot] (img1.png)
+![eclipse screenshot] (img2.png)

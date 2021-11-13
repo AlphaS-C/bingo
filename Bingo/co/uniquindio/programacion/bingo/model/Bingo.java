@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class Bingo {
 	private ArrayList<int[][]> tableros;
 	private static final int TAM = 5;
-	private int tablerosVendidos = 0;
+	private int tableroActual = 0;
+	ArrayList<Boolean> tablerosComprados = new ArrayList<Boolean>();
 
 	/**
 	 * M�todo constructor de la clase Bingo
@@ -40,17 +41,6 @@ public class Bingo {
 					}
 					
 					tableroBingo[j][i] = numeroGenerado;
-					/*if (verificarRepetido(tableroBingo, numeroGenerado) == false)
-					{
-						tableroBingo[j][i] = numeroGenerado; //pone el numero en el vector	
-					}
-					
-					else
-					{
-						tableroBingo[j][i] = 1;	
-					}
-					*/
-					
 					// poner 0 en el centro
 					if (j == 2 && i == 2)
 					{
@@ -101,19 +91,32 @@ public class Bingo {
 		return numero;
 	}
 	
-	public ArrayList<String> addCedulas (String cedula) // añade cedulas a un array
+	public ArrayList<String> addCedulas (String cedula) // añade cedulas a un array ()
 	{
 		ArrayList<String> cedulas = new ArrayList<String>();
 		cedulas.add(cedula);
 		return cedulas;
 	}
 	
-	public int sumarVendidos()
+	public int calcularTableroActual(int valorSuma)
 	{
-		tablerosVendidos += 1;
-		return tablerosVendidos;
+		tableroActual += valorSuma;
+		return tableroActual;
 	}
 	
+
+	
+	public ArrayList<Boolean> addTablerosComprados (boolean comprado, int tableroActual, int valorSuma) 
+	{
+		
+		for (int i = tableroActual - 1; i < tableroActual + valorSuma - 1; i++)
+		{
+			tablerosComprados.add(comprado);
+			System.out.print(tableroActual - 1 + "\n");
+			System.out.print(comprado + "\n");
+		}
+		return tablerosComprados;
+	}
 	
 	public String toStringTablero(int tableroBingo[][]) {
 		String res = "";
@@ -138,5 +141,5 @@ public class Bingo {
 	public static int getTam() {
 		return TAM;
 	}
-
+	
 }
